@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-
-<html>
-
 <head>
-    <title>Dela Rifa</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript" src="./script/script.js"></script>
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -23,7 +15,6 @@
 </head>
 
 <body>
-    <h1 class="d-flex justify-content-center titulo p-0 m-0">Dela Rifa</h1>
 
     <div>
         <button href="/index.html" type="button" class="btn btn-secondary">Voltar</button>
@@ -34,19 +25,14 @@
 
             <img src="https://user-images.githubusercontent.com/40414119/79510700-34195c80-8014-11ea-94eb-7d34a9181004.png"
                 class="mx-auto d-block">
-            <form [formGroup]="form">
+            <form>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" formControlName="email" name="email">
-                    <span class="invalid" *ngIf="form.controls.email.invalid && form.controls.email.dirty">Preenchimento
-                        obrigatório.</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>
                     <input type="password" class="form-control" formControlName="password" name="password">
-                    <span class="invalid"
-                        *ngIf="form.controls.password.invalid && form.controls.password.dirty">Preenchimento
-                        obrigatório.</span>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">
