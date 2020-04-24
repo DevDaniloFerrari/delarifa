@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Dela Rifa</title>
+    <script type="text/javascript" src="../script/script.js"></script>
+    <link rel="stylesheet" href="./css/partnership.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6c03845565.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class="d-flex justify-content-center titulo p-0 m-0">Dela Rifa</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto space">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home"><i class="fas fa-home"></i> Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cursor-pointer" href="/raffles.html"><i class="fas fa-box-open"></i> Rifas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cursor-pointer" href="/about.html"><i class="fas fa-info-circle"></i> Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cursor-pointer" href="/contact.html"><i class="far fa-address-card"></i>
+                        Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cursor-pointer" href="/partnership.html"><i class="fas fa-handshake"></i>
+                        Parcerias</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+
+                <li class="nav-item">
+                    <a class="nav-link cursor-pointer" (click)="login()"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top"
+                        src='https://pbs.twimg.com/profile_images/1207310445331329024/t1Q69r3l_400x400.jpg'
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Americanas</h5>
+                        <p class="card-text">A maior rede de vendas do país</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top"
+                        src='https://www.sunoresearch.com.br/wp-content/uploads/2019/09/amazon.png'
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Amazon</h5>
+                        <p class="card-text">A maior rede de vendas de vendas do mundo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top"
+                        src='https://iguatemi.com.br/patiohigienopolis/sites/patiohigienopolis/files/2018-04/Centauro%20s.png'
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Centauro</h5>
+                        <p class="card-text">A maior rede de esportivos do país</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top"
+                        src='https://www.melhordocinema.com.br/media/image_bank/2017/12/the-games.jpg.800x0_q85_crop.jpg'
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">The games</h5>
+                        <p class="card-text">A maior rede de games do país</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top"
+                        src='https://codigovalido.com.br/wp-content/uploads/2019/02/cupom-pichau.jpg'
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Extra</h5>
+                        <p class="card-text">A maior rede de supermercados do país</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <h2 id="tittle">Como funciona?</h2>
+        </div>
+
+        <div class="text">
+            <p>Os nossos parceiros têm um benefício financeiro que é retornado em cima do valor original do produto. É
+                destinado
+                a <b>empresas, microempresas, ou pessoas que vendem produtos legais, mas possuem CNPJ em seu nome</b>.
+                Os produtos devem
+                ser
+                novos e com garantia, e que caso houver algum problema com o produto o mesmo possa se responsabilizar.
+            </p>
+            <p>A Dela Rifa tem por objetivo fornecer o meio de contato e venda e nos responsabilizamos pela entrega do
+                produto.
+                O
+                benefício
+                para parceiros é de 15% a mais no valor do seu produto e o retorno será pago quando a rifa for
+                sorteada.</p>
+            <br>
+        </div>
+        <div>
+            <h2 id="tittle">Como ser Parceiro?</h2>
+        </div>
+        <div class="text">
+            <p>Caso deseja ser um de nossos parceiros em nossa aba de<a routerLink='/contact'> contato </a>só preencher
+                as
+                informações que o nosso suporte irá avaliar e entrar em contato.</p><br>
+        </div>
+
+        <h2 id="tittle">Casos</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Produtos rifados</th>
+                    <th scope="col">Valor dos produtos</th>
+                    <th scope="col">Faturamento (15%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Americanas</th>
+                    <td>32</td>
+                    <td>R$ 40.500</td>
+                    <td>R$ 6.075</td>
+                </tr>
+                <tr>
+                    <th scope="row">Amazon</th>
+                    <td>15</td>
+                    <td>R$ 12.000</td>
+                    <td>R$ 1.800</td>
+                </tr>
+                <tr>
+                    <th scope="row">Pichau</th>
+                    <td>7</td>
+                    <td>R$ 21.000</td>
+                    <td>R$ 3.150</td>
+                </tr>
+                <tr>
+                    <th scope="row">Centauro</th>
+                    <td>9</td>
+                    <td>R$ 2.700</td>
+                    <td>R$ 405</td>
+                </tr>
+                <tr>
+                    <th scope="row">The Games</th>
+                    <td>21</td>
+                    <td>R$ 4.200</td>
+                    <td>R$ 630</td>
+                </tr>
+                <tr>
+                    <th scope="row">Extra</th>
+                    <td>3</td>
+                    <td>R$ 1.200</td>
+                    <td>R$ 180</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+
+
+
+
+
+
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="/"> delarifa.com.br</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
