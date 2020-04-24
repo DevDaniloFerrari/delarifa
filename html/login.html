@@ -1,36 +1,54 @@
-<div>
-    <button routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
-</div>
+<!DOCTYPE html>
 
-<div class="container d-flex justify-content-center">
-    <div id="modal">
+<html>
 
-        <img src="https://user-images.githubusercontent.com/40414119/79510700-34195c80-8014-11ea-94eb-7d34a9181004.png"
-            class="mx-auto d-block">
-        <form [formGroup]="form">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" formControlName="email" name="email">
-                <span class="invalid" *ngIf="form.controls.email.invalid && form.controls.email.dirty">Preenchimento
-                    obrigatório.</span>
-            </div>
-            <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" class="form-control" formControlName="password" name="password">
-                <span class="invalid"
-                    *ngIf="form.controls.password.invalid && form.controls.password.dirty">Preenchimento
-                    obrigatório.</span>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-8 offset-md-2">
-                    <button type="submit" class="btn btn-lg btn-block login-button" (click)="login()">Entrar</button>
-                </div>
-            </div>
-        </form>
+<head>
+    <title>Dela Rifa</title>
+    <script type="text/javascript" src="../script/script.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6c03845565.js" crossorigin="anonymous"></script>
+</head>
 
-        <p>Ainda não possui cadastro?
-            <a routerLink='/registration' routerLinkActive='class'>Registre-se</a>
-        </p>
+<body>
+    <h1 class="d-flex justify-content-center titulo p-0 m-0">Dela Rifa</h1>
 
+    <div>
+        <button routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
     </div>
-</div>
+
+    <div class="container d-flex justify-content-center">
+        <div id="modal">
+
+            <img src="https://user-images.githubusercontent.com/40414119/79510700-34195c80-8014-11ea-94eb-7d34a9181004.png"
+                class="mx-auto d-block">
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" formControlName="email" name="email">
+                    <span class="invalid" *ngIf="form.controls.email.invalid && form.controls.email.dirty">Preenchimento
+                        obrigatório.</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" formControlName="password" name="password">
+                    <span class="invalid"
+                        *ngIf="form.controls.password.invalid && form.controls.password.dirty">Preenchimento
+                        obrigatório.</span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8 offset-md-2">
+                        <button type="submit" class="btn btn-lg btn-block login-button"
+                            (click)="login()">Entrar</button>
+                    </div>
+                </div>
+            </form>
+
+            <p>Ainda não possui cadastro?
+                <a routerLink='/registration' routerLinkActive='class'>Registre-se</a>
+            </p>
+
+        </div>
+    </div>
+</body>
