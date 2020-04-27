@@ -1,16 +1,35 @@
-function validateLoginForm() {
-    var email = document.forms["loginForm"]["email"].value;
-    var password = document.forms["loginForm"]["password"].value;
+function getUser(){
+    var user = localStorage.getItem($("#email").val());
+    user = JSON.parse(user);
+    if(user == null)
+        alert("Usuário ou senha incorretos");
+};
 
-    if (email == "") {
-        alert("Email precisa ser preenchido");
-        return false;
-    }
+function newUser(){
+    debugger;
+    var user = JSON.stringify({
+        fullName : $("#fullName").val(),
+        maritalStatus : $("#maritalStatus").val(),
+        gender : $("#gender").val(),
+        birhtDate : $("#birthDate").val(),
+        homePhone : $("#homePhone").val(),
+        cellPhone : $("#cellPhone").val(),
+        postalCode : $("#postalCode").val(),
+        number : $("#number").val(),
+        street : $("#street").val(),
+        neighborhood : $("#neighborhood").val(),
+        state : $("#state").val(),
+        city : $("#city").val(),
+        country : $("#country").val(),
+        email : $("#email").val(),
+        confirmEmail : $("#confirmEmail").val(),
+        password : $("#password").val(),
+        confirmPassword : $("#confirmPassword").val()
 
-    if (password == "") {
-        alert("Senha precisa ser preenchida");
-        return false;
-    }
+    });
+    localStorage.setItem( $("#email").val(), user);
+    alert("Novo usuário registrado.");
+    console.log(user);
 }
 
 function validateRegisterForm(){
@@ -102,8 +121,24 @@ function validateRegisterForm(){
         return false;
     }
 
-
+    this.newUser();
 }
+
+function validateLoginForm() {
+    var email = document.forms["loginForm"]["email"].value;
+    var password = document.forms["loginForm"]["password"].value;
+
+    if (email == "") {
+        alert("Email precisa ser preenchido");
+        return false;
+    }
+
+    if (password == "") {
+        alert("Senha precisa ser preenchida");
+        return false;
+    }
+}
+
 
 function getViaCep() {
     var cep = document.forms["registerForm"]["postalCode"].value;
