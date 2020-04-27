@@ -1,38 +1,46 @@
-function getUser(){
-    var user = localStorage.getItem($("#email").val());
-    user = JSON.parse(user);
-    if(user == null)
+function getUser(email, password) {
+    var user = JSON.parse(localStorage.getItem(email));
+    if (email != user.email) {
         alert("Usuário ou senha incorretos");
+        return;
+    }
+    if (password != user.password) {
+        alert("Usuário ou senha incorretos");
+        return;
+    }
+
+    alert("Usuário logado com sucesso");
+    window.location.replace("index.html");
 };
 
-function newUser(){
-    debugger;
+
+function newUser() {
     var user = JSON.stringify({
-        fullName : $("#fullName").val(),
-        maritalStatus : $("#maritalStatus").val(),
-        gender : $("#gender").val(),
-        birhtDate : $("#birthDate").val(),
-        homePhone : $("#homePhone").val(),
-        cellPhone : $("#cellPhone").val(),
-        postalCode : $("#postalCode").val(),
-        number : $("#number").val(),
-        street : $("#street").val(),
-        neighborhood : $("#neighborhood").val(),
-        state : $("#state").val(),
-        city : $("#city").val(),
-        country : $("#country").val(),
-        email : $("#email").val(),
-        confirmEmail : $("#confirmEmail").val(),
-        password : $("#password").val(),
-        confirmPassword : $("#confirmPassword").val()
+        fullName: $("#fullName").val(),
+        maritalStatus: $("#maritalStatus").val(),
+        gender: $("#gender").val(),
+        birhtDate: $("#birthDate").val(),
+        homePhone: $("#homePhone").val(),
+        cellPhone: $("#cellPhone").val(),
+        postalCode: $("#postalCode").val(),
+        number: $("#number").val(),
+        street: $("#street").val(),
+        neighborhood: $("#neighborhood").val(),
+        state: $("#state").val(),
+        city: $("#city").val(),
+        country: $("#country").val(),
+        email: $("#email").val(),
+        confirmEmail: $("#confirmEmail").val(),
+        password: $("#password").val(),
+        confirmPassword: $("#confirmPassword").val()
 
     });
-    localStorage.setItem( $("#email").val(), user);
+    localStorage.setItem(user.email, user);
     alert("Novo usuário registrado.");
     console.log(user);
 }
 
-function validateRegisterForm(){
+function validateRegisterForm() {
     var fullName = document.forms["registerForm"]["fullName"].value;
     var maritalStatus = document.forms["registerForm"]["maritalStatus"].value;
     var gender = document.forms["registerForm"]["gender"].value;
@@ -52,71 +60,71 @@ function validateRegisterForm(){
     var confirmPassword = document.forms["registerForm"]["confirmPassword"].value;
 
 
-    if(fullName == ""){
+    if (fullName == "") {
         alert("Nome completo precisa ser preenchido");
         return false;
     }
-    if(maritalStatus == ""){
+    if (maritalStatus == "") {
         alert("Estado Civil precisa ser preenchido");
         return false;
     }
-    if(gender == ""){
+    if (gender == "") {
         alert("Sexo precisa ser preenchido");
         return false;
     }
-    if(birthDate == ""){
+    if (birthDate == "") {
         alert("Data de nascimento completo precisa ser preenchido");
         return false;
     }
-    if(homePhone == ""){
+    if (homePhone == "") {
         alert("Telefone precisa ser preenchido");
         return false;
     }
-    if(cellPhone == ""){
+    if (cellPhone == "") {
         alert("Celular precisa ser preenchido");
         return false;
     }
-    if(postalCode == ""){
+    if (postalCode == "") {
         alert("CEP precisa ser preenchido");
         return false;
     }
-    if(number == ""){
+    if (number == "") {
         alert("Number precisa ser preenchido");
         return false;
     }
-    if(street == ""){
+    if (street == "") {
         alert("Rua precisa ser preenchido");
         return false;
     }
-    if(neighborhood == ""){
+    if (neighborhood == "") {
         alert("Bairro precisa ser preenchido");
         return false;
     }
-    if(state == ""){
+    if (state == "") {
         alert("Estado precisa ser preenchido");
         return false;
     }
-    if(city == ""){
+    if (city == "") {
         alert("Cidade precisa ser preenchido");
         return false;
     }
-    if(country == ""){
+    if (country == "") {
         alert("País precisa ser preenchido");
         return false;
     }
-    if(email == ""){
+    if (email == "") {
         alert("Email precisa ser preenchido");
         return false;
     }
-    if(confirmEmail == ""){
+    if (confirmEmail == "") {
         alert("Confirme seu Email precisa ser preenchido");
         return false;
     }
-    if(password == ""){
+    if (password == "") {
         alert("Senha precisa ser preenchido");
         return false;
     }
-    if(confirmPassword == ""){
+    if (confirmPassword == "") {
         alert("Confirme sua senha precisa ser preenchido");
         return false;
     }
@@ -137,6 +145,8 @@ function validateLoginForm() {
         alert("Senha precisa ser preenchida");
         return false;
     }
+
+    this.getUser(email, password);
 }
 
 
