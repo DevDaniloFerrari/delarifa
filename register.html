@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/register.css">
+    <script src="script/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -20,21 +21,20 @@
 
     <div class="container d-flex justify-content-center">
         <div id="modal">
-            <form>
+            <form name="registerForm">
                 <div class="row">
                     <div class="col-4">
                         <h3 class="text-center">Dados Pessoais</h3>
                         <hr>
                         <div class="form-group required">
                             <label for="fullName">Nome completo:</label>
-                            <input type="text" class="form-control" formControlName="fullName" id="fullName">
+                            <input type="text" class="form-control" name="fullName">
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="maritalStatus">Estado civil: </label>
-                                    <select type="maritalStatus" class="form-control" formControlName="maritalStatus"
-                                        id="maritalStatus">
+                                    <select type="maritalStatus" class="form-control" name="maritalStatus">
                                         <option value="MaritalStatus.Single">Solteiro</option>
                                         <option value="MaritalStatus.Married">Casado</option>
                                         <option value="MaritalStatus.Separated">Separado</option>
@@ -45,7 +45,7 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="gender">Sexo:</label>
-                                    <select type="text" class="form-control" formControlName="gender" id="gender">
+                                    <select type="text" class="form-control" name="gender">
                                         <option value="Gender.Male"> Masculino</option>
                                         <option value="Gender.Female"> Feminino</option>
                                     </select>
@@ -54,21 +54,19 @@
                         </div>
                         <div class="form-group required">
                             <label for="birthDate">Data de nascimento:</label>
-                            <input type="date" class="form-control" formControlName="birthDate" id="birthDate">
+                            <input type="date" class="form-control" name="birthDate">
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="homePhone">Telefone: </label>
-                                    <input type="number" class="form-control" formControlName="homePhone"
-                                        id="homePhone">
+                                    <input type="number" class="form-control" name="homePhone">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="cellPhone">Celular:</label>
-                                    <input type="number" class="form-control" formControlName="cellPhone"
-                                        id="cellPhone">
+                                    <input type="number" class="form-control" name="cellPhone">
                                 </div>
                             </div>
                         </div>
@@ -80,14 +78,13 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="postalCode">CEP:</label>
-                                    <input type="text" maxlength="8" class="form-control"
-                                        formControlName="postalCode" id="postalCode" (keyup)="getViacep()">
+                                    <input type="text" maxlength="8" class="form-control" name="postalCode" onblur="getViaCep()">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="number">Numero:</label>
-                                    <input type="number" class="form-control" formControlName="number" id="number">
+                                    <input type="number" class="form-control" name="number">
                                 </div>
                             </div>
                         </div>
@@ -95,15 +92,13 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="street">Rua:</label>
-                                    <input type="text" readonly="true" class="form-control" formControlName="street"
-                                        id="street">
+                                    <input type="text" readonly="true" class="form-control" name="street">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="neighborhood">Bairro:</label>
-                                    <input type="text" readonly="true" class="form-control"
-                                        formControlName="neighborhood" id="neighborhood">
+                                    <input type="text" readonly="true" class="form-control" name="neighborhood">
                                 </div>
                             </div>
                         </div>
@@ -111,21 +106,19 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="state">Estado:</label>
-                                    <input type="text" readonly="true" class="form-control" formControlName="state"
-                                        id="state">
+                                    <input type="text" readonly="true" class="form-control" name="state">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="city">Cidade:</label>
-                                    <input type="text" readonly="true" class="form-control" formControlName="city"
-                                        id="city">
+                                    <input type="text" readonly="true" class="form-control" name="city">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group required">
                             <label for="country">País:</label>
-                            <input type="text" class="form-control" formControlName="country" id="country">
+                            <input type="text" class="form-control" name="country">
                         </div>
                     </div>
                     <div class="col-4">
@@ -133,26 +126,25 @@
                         <hr>
                         <div class="form-group required">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" formControlName="email" id="email">
+                            <input type="email" class="form-control" name="email">
                         </div>
                         <div class="form-group required">
                             <label for="confirmEmail">Confirme seu Email:</label>
-                            <input type="email" class="form-control" formControlName="confirmEmail" id="confirmEmail">
+                            <input type="email" class="form-control" name="confirmEmail">
                         </div>
                         <div class="form-group required">
                             <label for="password">Senha:</label>
-                            <input type="password" class="form-control" formControlName="password" id="password">
+                            <input type="password" class="form-control" name="password">
                         </div>
                         <div class="form-group required">
                             <label for="confirmPassword">Confirme sua Senha:</label>
-                            <input type="password" class="form-control" formControlName="confirmPassword"
-                                id="confirmPassword">
+                            <input type="password" class="form-control" name="confirmPassword">
                         </div>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-lg btn-block register-button">Registrar</button>
+                        <input type="submit" class="btn btn-lg btn-block register-button">Registrar</input>
                     </div>
                 </div>
             </form>
