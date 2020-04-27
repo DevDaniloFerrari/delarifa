@@ -6,8 +6,8 @@
     color: white;
 }
 
-.space li {
-    margin-right: 35px;
+.space {
+    margin-right: 35px !important;
 }
 
 footer {

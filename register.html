@@ -2,6 +2,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/register.css">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -15,10 +16,8 @@
 </head>
 
 <body>
+    <a href="index.html" class="button btn btn-secondary">Voltar</a>
 
-    <div>
-        <button id="back" href="/home" type="button" class="btn btn-secondary">Voltar</button>
-    </div>
     <div class="container d-flex justify-content-center">
         <div id="modal">
             <form>
@@ -80,9 +79,9 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group required">
-                                    <label for="street">Rua:</label>
-                                    <input type="text" readonly="true" class="form-control" formControlName="street"
-                                        id="street">
+                                    <label for="postalCode">CEP:</label>
+                                    <input type="text" maxlength="8" class="form-control"
+                                        formControlName="postalCode" id="postalCode" (keyup)="getViacep()">
                                 </div>
                             </div>
                             <div class="col">
@@ -95,16 +94,16 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group required">
-                                    <label for="neighborhood">Bairro:</label>
-                                    <input type="text" readonly="true" class="form-control"
-                                        formControlName="neighborhood" id="neighborhood">
+                                    <label for="street">Rua:</label>
+                                    <input type="text" readonly="true" class="form-control" formControlName="street"
+                                        id="street">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group required">
-                                    <label for="postalCode">CEP:</label>
-                                    <input type="text" maxlength="8" class="form-control" formControlName="postalCode"
-                                        id="postalCode" (keyup)="getViacep()">
+                                    <label for="neighborhood">Bairro:</label>
+                                    <input type="text" readonly="true" class="form-control"
+                                        formControlName="neighborhood" id="neighborhood">
                                 </div>
                             </div>
                         </div>
@@ -158,8 +157,8 @@
                 </div>
             </form>
             <div class="text-center">
-                <p routerLink='/login' routerLinkActive='class'>Já é cadastrado?
-                    <a routerLink='/login' routerLinkActive='class'>Login</a>
+                <p>Já é cadastrado?
+                    <a href="login.html">Login</a>
                 </p>
             </div>
         </div>
