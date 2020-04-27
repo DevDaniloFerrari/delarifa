@@ -21,7 +21,7 @@
 
     <div class="container d-flex justify-content-center">
         <div id="modal">
-            <form name="registerForm">
+            <form name="registerForm" onsubmit="return validateRegisterForm()" method="POST">
                 <div class="row">
                     <div class="col-4">
                         <h3 class="text-center">Dados Pessoais</h3>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group">
-                        <input type="submit" class="btn btn-lg btn-block register-button">Registrar</input>
+                        <input type="submit" value ="Registrar" class="btn btn-lg btn-block register-button">
                     </div>
                 </div>
             </form>

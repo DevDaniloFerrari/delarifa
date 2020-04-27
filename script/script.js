@@ -13,6 +13,98 @@ function validateLoginForm() {
     }
 }
 
+function validateRegisterForm(){
+    var fullName = document.forms["registerForm"]["fullName"].value;
+    var maritalStatus = document.forms["registerForm"]["maritalStatus"].value;
+    var gender = document.forms["registerForm"]["gender"].value;
+    var birthDate = document.forms["registerForm"]["birthDate"].value;
+    var homePhone = document.forms["registerForm"]["homePhone"].value;
+    var cellPhone = document.forms["registerForm"]["cellPhone"].value;
+    var postalCode = document.forms["registerForm"]["postalCode"].value;
+    var number = document.forms["registerForm"]["number"].value;
+    var street = document.forms["registerForm"]["street"].value;
+    var neighborhood = document.forms["registerForm"]["neighborhood"].value;
+    var state = document.forms["registerForm"]["state"].value;
+    var city = document.forms["registerForm"]["city"].value;
+    var country = document.forms["registerForm"]["country"].value;
+    var email = document.forms["registerForm"]["email"].value;
+    var confirmEmail = document.forms["registerForm"]["confirmEmail"].value;
+    var password = document.forms["registerForm"]["password"].value;
+    var confirmPassword = document.forms["registerForm"]["confirmPassword"].value;
+
+
+    if(fullName == ""){
+        alert("Nome completo precisa ser preenchido");
+        return false;
+    }
+    if(maritalStatus == ""){
+        alert("Estado Civil precisa ser preenchido");
+        return false;
+    }
+    if(gender == ""){
+        alert("Sexo precisa ser preenchido");
+        return false;
+    }
+    if(birthDate == ""){
+        alert("Data de nascimento completo precisa ser preenchido");
+        return false;
+    }
+    if(homePhone == ""){
+        alert("Telefone precisa ser preenchido");
+        return false;
+    }
+    if(cellPhone == ""){
+        alert("Celular precisa ser preenchido");
+        return false;
+    }
+    if(postalCode == ""){
+        alert("CEP precisa ser preenchido");
+        return false;
+    }
+    if(number == ""){
+        alert("Number precisa ser preenchido");
+        return false;
+    }
+    if(street == ""){
+        alert("Rua precisa ser preenchido");
+        return false;
+    }
+    if(neighborhood == ""){
+        alert("Bairro precisa ser preenchido");
+        return false;
+    }
+    if(state == ""){
+        alert("Estado precisa ser preenchido");
+        return false;
+    }
+    if(city == ""){
+        alert("Cidade precisa ser preenchido");
+        return false;
+    }
+    if(country == ""){
+        alert("País precisa ser preenchido");
+        return false;
+    }
+    if(email == ""){
+        alert("Email precisa ser preenchido");
+        return false;
+    }
+    if(confirmEmail == ""){
+        alert("Confirme seu Email precisa ser preenchido");
+        return false;
+    }
+    if(password == ""){
+        alert("Senha precisa ser preenchido");
+        return false;
+    }
+    if(confirmPassword == ""){
+        alert("Confirme sua senha precisa ser preenchido");
+        return false;
+    }
+
+
+}
+
 function getViaCep() {
     var cep = document.forms["registerForm"]["postalCode"].value;
     var url = `https://viacep.com.br/ws/${cep}/json/`;
