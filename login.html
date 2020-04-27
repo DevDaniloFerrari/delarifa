@@ -24,7 +24,7 @@
 
             <img src="https://user-images.githubusercontent.com/40414119/79510700-34195c80-8014-11ea-94eb-7d34a9181004.png"
                 class="mx-auto d-block">
-            <form name="loginForm" onsubmit="validateLoginForm()" method="POST">
+            <form name="loginForm"  method="POST">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" name="email">
@@ -34,7 +34,7 @@
                     <input type="password" class="form-control" name="password">
                 </div>
                 <div class="form-row">
-                    <input type="submit" value="Entrar" class="btn btn-lg btn-block login-button">
+                    <input type="button" onclick="validateLoginForm()" value="Entrar" class="btn btn-lg btn-block login-button">
                 </div>
             </form>
 

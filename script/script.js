@@ -1,16 +1,22 @@
 function getUser(email, password) {
     var user = JSON.parse(localStorage.getItem(email));
-    if (email != user.email) {
-        alert("Usuário ou senha incorretos");
-        return;
-    }
-    if (password != user.password) {
-        alert("Usuário ou senha incorretos");
-        return;
+
+    if (user !== 'undefined' && user !== null) {
+        if (email != user.email) {
+            alert("Usuário ou senha incorretos");
+            return window.location.replace("login.html")
+        }
+        if (password != user.password) {
+            alert("Usuário ou senha incorretos");
+            return window.location.replace("login.html");
+        }
+
+        alert("Usuário logado com sucesso");
+        return window.location.replace("index.html");
     }
 
-    alert("Usuário logado com sucesso");
-    window.location.replace("index.html");
+    alert('Usuário ou senha incorretos');
+    return  window.location.replace("login.html");
 };
 
 
@@ -35,9 +41,10 @@ function newUser() {
         confirmPassword: $("#confirmPassword").val()
 
     });
-    localStorage.setItem(user.email, user);
+    
+    localStorage.setItem($("#email").val(), user);
     alert("Novo usuário registrado.");
-    console.log(user);
+    return window.location.replace("index.html");
 }
 
 function validateRegisterForm() {
