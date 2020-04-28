@@ -48,8 +48,9 @@ function newUser() {
     });
     
     localStorage.setItem($("#email").val(), user);
-    alert("Novo usuário registrado.");
-    return window.location.replace("index.html");
+    localStorage.setItem('token', btoa($("#email").val() + $("#password").val()));
+    alert("Usuário logado e cadastrado com sucesso");
+    return window.location.replace("profile.html");
 }
 
 function validateRegisterForm() {
