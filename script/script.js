@@ -12,12 +12,17 @@ function getUser(email, password) {
         }
 
         alert("Usuário logado com sucesso");
+        localStorage.setItem('token', btoa(user.email + user.password));
         return window.location.replace("index.html");
     }
 
     alert('Usuário ou senha incorretos');
     return  window.location.replace("login.html");
 };
+
+function logout(){
+    localStorage.removeItem('token');
+}
 
 
 function newUser() {
