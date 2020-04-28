@@ -12,15 +12,15 @@ function getUser(email, password) {
         }
 
         alert("Usuário logado com sucesso");
-        localStorage.setItem('token', btoa(user.email + user.password));
+        localStorage.setItem('token', btoa(user.email));
         return window.location.replace("index.html");
     }
 
     alert('Usuário ou senha incorretos');
-    return  window.location.replace("login.html");
+    return window.location.replace("login.html");
 };
 
-function logout(){
+function logout() {
     localStorage.removeItem('token');
 }
 
@@ -46,7 +46,7 @@ function newUser() {
         confirmPassword: $("#confirmPassword").val()
 
     });
-    
+
     localStorage.setItem($("#email").val(), user);
     localStorage.setItem('token', btoa($("#email").val() + $("#password").val()));
     alert("Usuário logado e cadastrado com sucesso");
@@ -193,4 +193,23 @@ function getViaCep() {
 
     request.send();
 
+}
+
+
+function getProfile() {
+    let email = atob(localStorage.getItem('token'));
+    let user = JSON.parse(localStorage.getItem(email));
+    document.getElementById('fullName').innerHTML = user.fullName;
+    document.getElementById('birhtDate').innerHTML = user.birhtDate;
+    document.getElementById('gender').innerHTML = user.gender;
+    document.getElementById('maritalStatus').innerHTML = user.maritalStatus;
+    document.getElementById('homePhone').innerHTML = user.homePhone;
+    document.getElementById('cellPhone').innerHTML = user.cellPhone;
+    document.getElementById('email').innerHTML = user.email;
+    document.getElementById('street').innerHTML = user.street;
+    document.getElementById('number').innerHTML = user.number;
+    document.getElementById('postalCode').innerHTML = user.postalCode;
+    document.getElementById('neighborhood').innerHTML = user.neighborhood;
+    document.getElementById('city').innerHTML = user.city;
+    document.getElementById('country').innerHTML = user.country;
 }
