@@ -29,7 +29,7 @@
         </ul>
         <ul class="navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-link cursor-pointer" href="profile.html"><i class="fas fa-user-circle"></i> Perfil</a>
+                <a id="perfilBtn" class="nav-link cursor-pointer"></a>
             </li>
             <li class="nav-item">
                 <a id="loginBtn" class="nav-link cursor-pointer"></a>
@@ -40,11 +40,17 @@
 
 <script>
     let loginBtn = $('#loginBtn');
+    let perfilBtn = $('#perfilBtn');
     if (localStorage.getItem('token') != undefined) {
+        perfilBtn.append( 
+            '<i class="fas fa-user-circle"></i>'+
+            ' Perfil'
+        );
         loginBtn.append(
             '<i class="fas fa-sign-out-alt"></i>'+
             ' Logout'
         );
+        perfilBtn.attr('href', 'profile.html');
         loginBtn.attr('href', 'index.html');
         loginBtn.on('click', function() {
             logout();

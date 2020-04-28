@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type="text/javascript" src="./script/script.js"></script>
-    <link rel="stylesheet" href="./css/raffles.css">
+    <link rel="stylesheet" href="./css/profile.css">
     <link rel="stylesheet" href="./css/style.css">
 
 
@@ -36,8 +36,77 @@
 
 <body>
     <div id="header"></div>
-        
+
+    <div class="container">
+        <div id="modal">
+            <ul>Email: <div class="ul" id="email"></div>
+            </ul>
+            <div class="row">
+                <div class="col">
+                    <ul>Nome: <div class="ul" id="fullName"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>Data de nascimento : <div class="ul" id="birhtDate"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>Sexo: <div class="ul" id="gender"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>Estado civil: <div class="ul" id="maritalStatus"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>Telefone: <div class="ul" id="homePhone"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>Celular: <div class="ul" id="cellPhone"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>Endereço: <div class="ul" id="street"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>Número: <div class="ul" id="number"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>Bairro: <div class="ul" id="neighborhood"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>CEP: <div class="ul" id="postalCode"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>Cidade: <div class="ul" id="city"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>País: <div class="ul" id="country"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="footer"></div>
 </body>
+<script>
+    getProfile();
+</script>
 
 </html>
