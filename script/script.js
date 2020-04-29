@@ -1,4 +1,4 @@
-function getUser(email, password) {
+function login(email, password) {
     var user = JSON.parse(localStorage.getItem(email));
 
     if (user !== 'undefined' && user !== null) {
@@ -25,12 +25,44 @@ function logout() {
 }
 
 
-function newUser() {
-    var user = JSON.stringify({
+function createUser() {
+
+    var registerForm = getRegisterForm();
+
+    var userString = JSON.stringify({
+        fullName: registerForm.fullName,
+        maritalStatus: registerForm.maritalStatus,
+        gender: registerForm.gender,
+        birhtDate: registerForm.birhtDate,
+        homePhone: registerForm.homePhone,
+        cellPhone: registerForm.cellPhone,
+        postalCode: registerForm.postalCode,
+        number: registerForm.number,
+        street: registerForm.street,
+        neighborhood: registerForm.neighborhood,
+        state: registerForm.state,
+        city: registerForm.city,
+        country: registerForm.country,
+        email: registerForm.email,
+        password: registerForm.password
+    });
+
+    var user = JSON.parse(userString);
+
+    localStorage.setItem(user.email, userString);
+    localStorage.setItem('token', btoa(user.email));
+    alert("Usuário cadastrado e logado com sucesso");
+
+    return window.location.replace("profile.html");
+}
+
+
+function getRegisterForm() {
+    var registerForm = JSON.stringify({
         fullName: $("#fullName").val(),
         maritalStatus: $("#maritalStatus").val(),
         gender: $("#gender").val(),
-        birhtDate: $("#birthDate").val(),
+        birthDate: $("#birthDate").val(),
         homePhone: $("#homePhone").val(),
         cellPhone: $("#cellPhone").val(),
         postalCode: $("#postalCode").val(),
@@ -44,105 +76,98 @@ function newUser() {
         confirmEmail: $("#confirmEmail").val(),
         password: $("#password").val(),
         confirmPassword: $("#confirmPassword").val()
-
     });
-
-    localStorage.setItem($("#email").val(), user);
-    localStorage.setItem('token', btoa($("#email").val() + $("#password").val()));
-    alert("Usuário logado e cadastrado com sucesso");
-    return window.location.replace("profile.html");
+    return JSON.parse(registerForm);
 }
 
 function validateRegisterForm() {
-    var fullName = document.forms["registerForm"]["fullName"].value;
-    var maritalStatus = document.forms["registerForm"]["maritalStatus"].value;
-    var gender = document.forms["registerForm"]["gender"].value;
-    var birthDate = document.forms["registerForm"]["birthDate"].value;
-    var homePhone = document.forms["registerForm"]["homePhone"].value;
-    var cellPhone = document.forms["registerForm"]["cellPhone"].value;
-    var postalCode = document.forms["registerForm"]["postalCode"].value;
-    var number = document.forms["registerForm"]["number"].value;
-    var street = document.forms["registerForm"]["street"].value;
-    var neighborhood = document.forms["registerForm"]["neighborhood"].value;
-    var state = document.forms["registerForm"]["state"].value;
-    var city = document.forms["registerForm"]["city"].value;
-    var country = document.forms["registerForm"]["country"].value;
-    var email = document.forms["registerForm"]["email"].value;
-    var confirmEmail = document.forms["registerForm"]["confirmEmail"].value;
-    var password = document.forms["registerForm"]["password"].value;
-    var confirmPassword = document.forms["registerForm"]["confirmPassword"].value;
+    var registerForm = getRegisterForm();
 
-
-    if (fullName == "") {
+    if (registerForm.fullName == "") {
         alert("Nome completo precisa ser preenchido");
         return false;
     }
-    if (maritalStatus == "") {
+    if (registerForm.maritalStatus == "") {
         alert("Estado Civil precisa ser preenchido");
         return false;
     }
-    if (gender == "") {
+    if (registerForm.gender == "") {
         alert("Sexo precisa ser preenchido");
         return false;
     }
-    if (birthDate == "") {
+    if (registerForm.birthDate == "") {
         alert("Data de nascimento completo precisa ser preenchido");
         return false;
     }
-    if (homePhone == "") {
+    if (registerForm.homePhone == "") {
         alert("Telefone precisa ser preenchido");
         return false;
     }
-    if (cellPhone == "") {
+    if (registerForm.cellPhone == "") {
         alert("Celular precisa ser preenchido");
         return false;
     }
-    if (postalCode == "") {
+    if (registerForm.postalCode == "") {
         alert("CEP precisa ser preenchido");
         return false;
     }
-    if (number == "") {
+    if (registerForm.number == "") {
         alert("Number precisa ser preenchido");
         return false;
     }
-    if (street == "") {
+    if (registerForm.street == "") {
         alert("Rua precisa ser preenchido");
         return false;
     }
-    if (neighborhood == "") {
+    if (registerForm.neighborhood == "") {
         alert("Bairro precisa ser preenchido");
         return false;
     }
-    if (state == "") {
+    if (registerForm.state == "") {
         alert("Estado precisa ser preenchido");
         return false;
     }
-    if (city == "") {
+    if (registerForm.city == "") {
         alert("Cidade precisa ser preenchido");
         return false;
     }
-    if (country == "") {
+    if (registerForm.country == "") {
         alert("País precisa ser preenchido");
         return false;
     }
-    if (email == "") {
+    if (registerForm.email == "") {
         alert("Email precisa ser preenchido");
         return false;
     }
-    if (confirmEmail == "") {
+    if (registerForm.confirmEmail == "") {
         alert("Confirme seu Email precisa ser preenchido");
         return false;
     }
-    if (password == "") {
+    if (registerForm.email != registerForm.confirmEmail) {
+        alert("A confirmação de email está diferente");
+        return false;
+    }
+    if (registerForm.password == "") {
         alert("Senha precisa ser preenchido");
         return false;
     }
-    if (confirmPassword == "") {
+    if (registerForm.confirmPassword == "") {
         alert("Confirme sua senha precisa ser preenchido");
         return false;
     }
+    if (registerForm.password != registerForm.confirmPassword) {
+        alert("A confirmação de senha está diferente");
+        return false;
+    }
 
-    this.newUser();
+    var user = JSON.parse(localStorage.getItem(registerForm.email));
+
+    if (user !== 'undefined' && user !== null) {
+        alert("Email já cadastrado")
+        return false;
+    }
+
+    this.createUser();
 }
 
 function validateLoginForm() {
@@ -159,7 +184,7 @@ function validateLoginForm() {
         return false;
     }
 
-    this.getUser(email, password);
+    this.login(email, password);
 }
 
 
@@ -170,10 +195,10 @@ function getViaCep() {
 
     request.onerror = function () {
         alert("CEP inválido");
-        document.forms["registerForm"]["street"].value = null;
-        document.forms["registerForm"]["neighborhood"].value = null;
-        document.forms["registerForm"]["state"].value = null;
-        document.forms["registerForm"]["city"].value = null;
+        document.forms["registerForm"]["street"].value = "";
+        document.forms["registerForm"]["neighborhood"].value = "";
+        document.forms["registerForm"]["state"].value = "";
+        document.forms["registerForm"]["city"].value = "";
     };
 
     request.open('GET', url, true);
