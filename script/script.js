@@ -192,7 +192,6 @@ function getViaCep() {
     };
 
     request.send();
-
 }
 
 

@@ -7,29 +7,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto space">
-            <li class="nav-item active space">
-                <a class="nav-link nav-title" href="index.html"><i class="fas fa-home"></i> Home </a>
+            <li class="nav-item space">
+                <a id="nav-index" class="nav-link nav-title" href="index.html"><i class="fas fa-home"></i> Home </a>
             </li>
             <li class="nav-item space">
-                <a class="nav-link cursor-pointer nav-title" href="raffles.html"><i class="fas fa-box-open"></i>
+                <a id="nav-raffles" class="nav-link cursor-pointer nav-title" href="raffles.html"><i class="fas fa-box-open"></i>
                     Rifas</a>
             </li>
             <li class="nav-item space">
-                <a class="nav-link cursor-pointer nav-title" href="about.html"><i class="fas fa-info-circle"></i>
+                <a id="nav-about" class="nav-link cursor-pointer nav-title" href="about.html"><i class="fas fa-info-circle"></i>
                     Sobre</a>
             </li>
             <li class="nav-item space">
-                <a class="nav-link cursor-pointer nav-title" href="contact.html"><i class="far fa-address-card"></i>
+                <a id="nav-contact" class="nav-link cursor-pointer nav-title" href="contact.html"><i class="far fa-address-card"></i>
                     Contato</a>
             </li>
             <li class="nav-item space">
-                <a class="nav-link cursor-pointer nav-title" href="partnership.html"><i class="fas fa-handshake"></i>
+                <a id="nav-partnership" class="nav-link cursor-pointer nav-title" href="partnership.html"><i class="fas fa-handshake"></i>
                     Parcerias</a>
             </li>
         </ul>
         <ul class="navbar-nav navbar-right">
             <li class="nav-item">
-                <a id="perfilBtn" class="nav-link cursor-pointer"></a>
+                <a id="profileBtn" class="nav-link cursor-pointer"></a>
             </li>
             <li class="nav-item">
                 <a id="loginBtn" class="nav-link cursor-pointer"></a>
@@ -40,9 +40,9 @@
 
 <script>
     let loginBtn = $('#loginBtn');
-    let perfilBtn = $('#perfilBtn');
+    let profileBtn = $('#profileBtn');
     if (localStorage.getItem('token') != undefined) {
-        perfilBtn.append( 
+        profileBtn.append( 
             '<i class="fas fa-user-circle"></i>'+
             ' Perfil'
         );
@@ -50,7 +50,7 @@
             '<i class="fas fa-sign-out-alt"></i>'+
             ' Logout'
         );
-        perfilBtn.attr('href', 'profile.html');
+        profileBtn.attr('href', 'profile.html');
         loginBtn.attr('href', 'index.html');
         loginBtn.on('click', function() {
             logout();
@@ -63,5 +63,29 @@
         loginBtn.attr('href', 'login.html');
     }
 
+    $(document).ready(function() {
+        let url = window.location.pathname;
+        let activeRoute = url.replace('/delarifa/', '');
+        
+        switch (activeRoute) {
+            case 'index.html': 
+                $('#nav-index').addClass('active');
+                break;
+            case 'raffles.html':
+                $('#nav-raffles').addClass('active');
+                break;
+            case 'about.html':
+                $('#nav-about').addClass('active');
+                break;
+            case 'contact.html':
+                $('#nav-contact').addClass('active');
+                break;
+            case 'partnership.html':
+                $('#nav-partnership').addClass('active');
+                break;
+            case 'profile.html':
+                $('#profileBtn').addClass('active');
+        }        
+    });
  
 </script>
