@@ -4,9 +4,10 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/register.css">
     <script src="script/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -34,7 +35,8 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="maritalStatus">Estado civil: </label>
-                                    <select type="maritalStatus" class="form-control" name="maritalStatus" id="maritalStatus">
+                                    <select type="maritalStatus" class="form-control" name="maritalStatus"
+                                        id="maritalStatus">
                                         <option value="Solteiro">Solteiro</option>
                                         <option value="Casado">Casado</option>
                                         <option value="Separado">Separado</option>
@@ -78,7 +80,8 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="postalCode">CEP:</label>
-                                    <input type="text" maxlength="8" class="form-control" name="postalCode" id="postalCode" onblur="getViaCep()">
+                                    <input type="text" maxlength="8" class="form-control" name="postalCode"
+                                        id="postalCode" onblur="getViaCep()">
                                 </div>
                             </div>
                             <div class="col">
@@ -98,7 +101,8 @@
                             <div class="col">
                                 <div class="form-group required">
                                     <label for="neighborhood">Bairro:</label>
-                                    <input type="text" readonly="true" class="form-control" name="neighborhood" id="neighborhood">
+                                    <input type="text" readonly="true" class="form-control" name="neighborhood"
+                                        id="neighborhood">
                                 </div>
                             </div>
                         </div>
@@ -144,7 +148,8 @@
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group">
-                        <input type="button" onclick="validateRegisterForm()" value ="Registrar" class="btn btn-lg btn-block register-button">
+                        <input type="button" onclick="validateRegisterForm()" value="Registrar"
+                            class="btn btn-lg btn-block register-button">
                     </div>
                 </div>
             </form>
@@ -156,4 +161,3 @@
         </div>
     </div>
 </body>
-

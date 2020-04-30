@@ -9,13 +9,13 @@
     <script type="text/javascript" src="./script/script.js"></script>
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="shortcut icon" href="assets/favicon.ico" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.5.0.js"
-        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -30,51 +30,52 @@
 
 <style>
     .social-icons a {
-    display: inline-block;
-    height: 3.5rem;
-    width: 3.5rem;
-    background-color: #495057;
-    color: #fff !important;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 3.5rem;
-    margin-right: 1rem;
-  }
-  
-  .social-icons a:last-child {
-    margin-right: 0;
-  }
-  
-  .social-icons a:hover {
-    background-color: #BD5D38;
-  }
+        display: inline-block;
+        height: 3.5rem;
+        width: 3.5rem;
+        background-color: #495057;
+        color: #fff !important;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 3.5rem;
+        margin-right: 1rem;
+    }
+
+    .social-icons a:last-child {
+        margin-right: 0;
+    }
+
+    .social-icons a:hover {
+        background-color: #BD5D38;
+    }
 </style>
 
 <body>
     <div id="header"></div>
-    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered p-5" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="cv-profession"></h4>
+                    <h5 class="my-2 text-bold">Tecnologias</h6>
+                        <ul class="tech-list">
+                        </ul>
+                        <div class="social-icons text-center"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <h4 id="cv-profession"></h4>
-                <h5 class="my-2 text-bold">Tecnologias</h6>
-                <ul class="tech-list">
-                </ul>
-                <div class="social-icons text-center"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <div class="container"><br>
         <div>
             <h2 id="title">Quem somos?</h2>
@@ -139,8 +140,8 @@
             <div class="col">
                 <br>
                 <h2> Valores </h2>
-                    <p>Equilíbrio
-                        <br>
+                <p>Equilíbrio
+                    <br>
                     Transparência
                     <br>
                     Segurança</ul>
@@ -153,7 +154,7 @@
 </html>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         const cvManoel = $('#cv-manoel');
         const cvDanilo = $('#cv-danilo');
         const cvLucas = $('#cv-lucas');
@@ -168,74 +169,74 @@
         const modal = $('.modal');
 
         const cvManoelData = {
-            name : "Manoel Merlin",
-            age : 20,
-            course : "Sistema da informação",
+            name: "Manoel Merlin",
+            age: 20,
+            course: "Sistema da informação",
             profession: "Desenvolvedor web",
-            gitHub : 'https://github.com/manoelmerlin',
-            linkedin : 'https://www.linkedin.com/in/manoel-merlin-neto-596904184/',
-            tecnologies : ['PHP', 'Angular', 'MySql', 'jquery']
+            gitHub: 'https://github.com/manoelmerlin',
+            linkedin: 'https://www.linkedin.com/in/manoel-merlin-neto-596904184/',
+            tecnologies: ['PHP', 'Angular', 'MySql', 'jquery']
         };
 
         const cvLucasData = {
-            name : "Lucas Oliveira",
-            age : 19,
-            course : "Sistema da informação",
+            name: "Lucas Oliveira",
+            age: 19,
+            course: "Sistema da informação",
             profession: "Desenvolvedor Fullstack",
-            gitHub : 'https://github.com/DevLucasOliveira',
-            linkedin : 'https://www.linkedin.com/in/lucas-oliveira-91a27716a',
-            tecnologies : ['C#', '.NET Core', 'Angular', 'SQL Server']
+            gitHub: 'https://github.com/DevLucasOliveira',
+            linkedin: 'https://www.linkedin.com/in/lucas-oliveira-91a27716a',
+            tecnologies: ['C#', '.NET Core', 'Angular', 'SQL Server']
         };
 
         const cvDaniloData = {
-            name : "Danilo Ferrari",
-            age : 19,
-            course : "Sitema da informação",
+            name: "Danilo Ferrari",
+            age: 19,
+            course: "Sitema da informação",
             profession: "desenvolvedor Fullstack",
-            gitHub : 'https://www.github.com/DevDaniloFerrari',
-            linkedin : 'https://www.linkedin.com/in/danilo-ferrari-5830a4161',
-            tecnologies : ['C#', 'NET Core', 'Angular', 'Azure', 'AWS', 'SqlServer']
+            gitHub: 'https://www.github.com/DevDaniloFerrari',
+            linkedin: 'https://www.linkedin.com/in/danilo-ferrari-5830a4161',
+            tecnologies: ['C#', 'NET Core', 'Angular', 'Azure', 'AWS', 'SqlServer']
         };
 
         const cvKimData = {
-            name : "Kim Kokubun",
-            age : '',
-            course : "Sistema da informação",
+            name: "Kim Kokubun",
+            age: '',
+            course: "Sistema da informação",
             profession: "desenvolvedor FullStack ",
-            gitHub : 'https://github.com/kimkokubun',
-            linkedin : 'https://www.linkedin.com/in/kim-silveira-882296161/',
-            tecnologies : ['Java', 'Angular', 'PostgreSQl', 'NodeJs']
+            gitHub: 'https://github.com/kimkokubun',
+            linkedin: 'https://www.linkedin.com/in/kim-silveira-882296161/',
+            tecnologies: ['Java', 'Angular', 'PostgreSQl', 'NodeJs']
         };
 
-        cvManoel.on('click', function() {
+        cvManoel.on('click', function () {
             modalManoel = true;
             modal.modal('show');
         });
 
-        cvDanilo.on('click', function() {
+        cvDanilo.on('click', function () {
             modalDanilo = true;
             modal.modal('show');
         });
 
-        cvLucas.on('click', function() {
+        cvLucas.on('click', function () {
             modalLucas = true;
             modal.modal('show');
         });
 
-        cvKim.on('click', function() {
+        cvKim.on('click', function () {
             modalKim = true;
             modal.modal('show');
         });
 
 
-        modal.on('shown.bs.modal', function() {
+        modal.on('shown.bs.modal', function () {
             const modalHeader = $('#exampleModalLongTitle');
             const cvProfession = $('#cv-profession');
 
             if (modalManoel) {
-                $.each(cvManoelData.tecnologies, function(key, value) {
+                $.each(cvManoelData.tecnologies, function (key, value) {
                     techList.append(
-                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`  
+                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`
                     );
                 });
 
@@ -244,16 +245,16 @@
 
                 socialLinks.append(
                     `<a href="${cvManoelData.linkedin}"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="${cvManoelData.gitHub}"><i class="fab fa-github"></i></a>`  
+                    <a href="${cvManoelData.gitHub}"><i class="fab fa-github"></i></a>`
                 );
 
                 modalManoel = false
-            } 
+            }
 
             if (modalDanilo) {
-                $.each(cvDaniloData.tecnologies, function(key, value) {
+                $.each(cvDaniloData.tecnologies, function (key, value) {
                     techList.append(
-                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`  
+                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`
                     );
                 });
 
@@ -262,15 +263,15 @@
 
                 socialLinks.append(
                     `<a href="${cvDaniloData.linkedin}"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="${cvDaniloData.gitHub}"><i class="fab fa-github"></i></a>`  
+                    <a href="${cvDaniloData.gitHub}"><i class="fab fa-github"></i></a>`
                 );
                 modalDanilo = false
-            } 
-            
+            }
+
             if (modalLucas) {
-                $.each(cvLucasData.tecnologies, function(key, value) {
+                $.each(cvLucasData.tecnologies, function (key, value) {
                     techList.append(
-                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`  
+                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`
                     );
                 });
 
@@ -279,15 +280,15 @@
 
                 socialLinks.append(
                     `<a href="${cvLucasData.linkedin}"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="${cvLucasData.gitHub}"><i class="fab fa-github"></i></a>`  
+                    <a href="${cvLucasData.gitHub}"><i class="fab fa-github"></i></a>`
                 );
                 modalLucas = false
-            } 
+            }
 
             if (modalKim) {
-                $.each(cvKimData.tecnologies, function(key, value) {
+                $.each(cvKimData.tecnologies, function (key, value) {
                     techList.append(
-                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`  
+                        `<li style="list-style-type:circle;" class="p-2">${value}</li>`
                     );
                 });
 
@@ -296,16 +297,15 @@
 
                 socialLinks.append(
                     `<a href="${cvKimData.linkedin}"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="${cvKimData.gitHub}"><i class="fab fa-github"></i></a>`  
+                    <a href="${cvKimData.gitHub}"><i class="fab fa-github"></i></a>`
                 );
                 modalKim = false
-            } 
+            }
         });
 
-        modal.on('hidden.bs.modal', function() {
+        modal.on('hidden.bs.modal', function () {
             techList.html('');
             socialLinks.html('');
         })
     });
 </script>
-

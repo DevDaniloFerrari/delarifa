@@ -4,9 +4,10 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/login.css">
     <script src="script/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -24,7 +25,7 @@
 
             <img src="https://user-images.githubusercontent.com/40414119/79510700-34195c80-8014-11ea-94eb-7d34a9181004.png"
                 class="mx-auto d-block">
-            <form name="loginForm"  method="POST">
+            <form name="loginForm" method="POST">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" name="email">
@@ -34,7 +35,8 @@
                     <input type="password" class="form-control" name="password">
                 </div>
                 <div class="form-row">
-                    <input type="button" onclick="validateLoginForm()" value="Entrar" class="btn btn-lg btn-block login-button">
+                    <input type="button" onclick="validateLoginForm()" value="Entrar"
+                        class="btn btn-lg btn-block login-button">
                 </div>
             </form>
 

@@ -3,7 +3,6 @@ $(document).ready(function() {
         type: 'GET',
         url: 'header.html',
         success: dados => {
-            console.log('aqui')
             $('#header').html(dados)
         }
     });
