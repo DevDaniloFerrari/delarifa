@@ -33,7 +33,7 @@ function createUser() {
         fullName: registerForm.fullName,
         maritalStatus: registerForm.maritalStatus,
         gender: registerForm.gender,
-        birhtDate: registerForm.birhtDate,
+        birthDate: registerForm.birthDate,
         homePhone: registerForm.homePhone,
         cellPhone: registerForm.cellPhone,
         postalCode: registerForm.postalCode,
@@ -223,17 +223,19 @@ function getViaCep() {
 function getProfile() {
     let email = atob(localStorage.getItem('token'));
     let user = JSON.parse(localStorage.getItem(email));
+    debugger;
     document.getElementById('fullName').innerHTML = user.fullName;
-    document.getElementById('birhtDate').innerHTML = user.birhtDate;
-    document.getElementById('gender').innerHTML = user.gender;
     document.getElementById('maritalStatus').innerHTML = user.maritalStatus;
+    document.getElementById('gender').innerHTML = user.gender;
+    document.getElementById('birthDate').innerHTML = user.birthDate;
     document.getElementById('homePhone').innerHTML = user.homePhone;
     document.getElementById('cellPhone').innerHTML = user.cellPhone;
-    document.getElementById('email').innerHTML = user.email;
-    document.getElementById('street').innerHTML = user.street;
-    document.getElementById('number').innerHTML = user.number;
     document.getElementById('postalCode').innerHTML = user.postalCode;
+    document.getElementById('number').innerHTML = user.number;
+    document.getElementById('street').innerHTML = user.street;
     document.getElementById('neighborhood').innerHTML = user.neighborhood;
+    document.getElementById('state').innerHTML = user.state;
     document.getElementById('city').innerHTML = user.city;
     document.getElementById('country').innerHTML = user.country;
+    document.getElementById('email').innerHTML = user.email;
 }
