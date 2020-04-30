@@ -223,7 +223,6 @@ function getViaCep() {
 function getProfile() {
     let email = atob(localStorage.getItem('token'));
     let user = JSON.parse(localStorage.getItem(email));
-    debugger;
     document.getElementById('fullName').innerHTML = user.fullName;
     document.getElementById('maritalStatus').innerHTML = user.maritalStatus;
     document.getElementById('gender').innerHTML = user.gender;

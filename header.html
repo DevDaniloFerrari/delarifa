@@ -4,12 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.0.js"
-        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
-   
 
 </head>
 
@@ -26,19 +30,23 @@
                 <a id="nav-index" class="nav-link nav-title" href="index.html"><i class="fas fa-home"></i> Home </a>
             </li>
             <li class="nav-item space">
-                <a id="nav-raffles" class="nav-link cursor-pointer nav-title" href="raffles.html"><i class="fas fa-box-open"></i>
+                <a id="nav-raffles" class="nav-link cursor-pointer nav-title" href="raffles.html"><i
+                        class="fas fa-box-open"></i>
                     Rifas</a>
             </li>
             <li class="nav-item space">
-                <a id="nav-about" class="nav-link cursor-pointer nav-title" href="about.html"><i class="fas fa-info-circle"></i>
+                <a id="nav-about" class="nav-link cursor-pointer nav-title" href="about.html"><i
+                        class="fas fa-info-circle"></i>
                     Sobre</a>
             </li>
             <li class="nav-item space">
-                <a id="nav-contact" class="nav-link cursor-pointer nav-title" href="contact.html"><i class="far fa-address-card"></i>
+                <a id="nav-contact" class="nav-link cursor-pointer nav-title" href="contact.html"><i
+                        class="far fa-address-card"></i>
                     Contato</a>
             </li>
             <li class="nav-item space">
-                <a id="nav-partnership" class="nav-link cursor-pointer nav-title" href="partnership.html"><i class="fas fa-handshake"></i>
+                <a id="nav-partnership" class="nav-link cursor-pointer nav-title" href="partnership.html"><i
+                        class="fas fa-handshake"></i>
                     Parcerias</a>
             </li>
         </ul>
@@ -58,33 +66,33 @@
     let profileBtn = $('#profileBtn');
 
     if (localStorage.getItem('token') != undefined) {
-        profileBtn.append( 
-            '<i class="fas fa-user-circle"></i>'+
+        profileBtn.append(
+            '<i class="fas fa-user-circle"></i>' +
             ' Perfil'
         );
         loginBtn.append(
-            '<i class="fas fa-sign-out-alt"></i>'+
+            '<i class="fas fa-sign-out-alt"></i>' +
             ' Logout'
         );
         profileBtn.attr('href', 'profile.html');
         loginBtn.attr('href', 'index.html');
-        loginBtn.on('click', function() {
+        loginBtn.on('click', function () {
             logout();
         });
     } else {
         loginBtn.append(
-            '<i class="fas fa-sign-in-alt"></i>'+
+            '<i class="fas fa-sign-in-alt"></i>' +
             ' Login'
         );
         loginBtn.attr('href', 'login.html');
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         let url = window.location.pathname;
         let activeRoute = url.replace('/delarifa/', '');
-        
+
         switch (activeRoute) {
-            case 'index.html': 
+            case 'index.html':
                 $('#nav-index').addClass('active');
                 break;
             case 'raffles.html':
@@ -101,7 +109,7 @@
                 break;
             case 'profile.html':
                 $('#profileBtn').addClass('active');
-        }        
+        }
     });
- 
+
 </script>
